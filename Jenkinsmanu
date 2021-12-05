@@ -1,5 +1,10 @@
 node{
-
+echo "GitHub BranchName ${env.BRANCH_NAME}"
+echo "Jenkins Job Number ${env.BUILD_NUMBER}"
+echo "Jenkins Node Number ${env.NODE_NAME}"
+echo "Jenkins Home ${env.JENKINS_HOME}"
+echo "Jenkins URL ${env.JENKINS_URL}"
+echo "Job Name ${env.JOB_NAME}"
 def mavenhome = tool name: "Maven 3.8.3"
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '5'))])
 stage('CheckOutCode'){
