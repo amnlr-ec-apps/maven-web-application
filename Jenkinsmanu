@@ -1,0 +1,32 @@
+node{
+
+def mavenhome = tool name: "Maven 3.8.3"
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '5'))])
+stage('CheckOutCode'){
+git credentialsId: '02f90c2a-a8c9-41fb-ae3b-d8e5f7d07168', url: 'https://github.com/amnlr-ec-apps/maven-web-application.git'
+}
+stage('Build'){
+sh "${mavenhome}/bin/mvn clean package"
+}
+
+stage('ExecuteSonarQuebeReport'){
+
+sh "${mavenhome}/bin/mvn sonar:sonar"
+}
+/*
+stage('UploadArtifactsIntotheNexusRepo'){
+
+sh "${mavenhome}/bin/mvn deploy"
+}
+*/
+stage('DeployAppintoTomcatServer'){
+sshagent(['6386b7db-ab9c-4f82-a001-4385242b52a1']) {
+sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.109.213.84:/opt/apache-tomcat-9.0.54/webapps/"
+}
+}
+/*
+stage('SendEmailNotification'){
+mail bcc: 'manohara.arm@gmail.com', body: 'Application has  been deployed to the Tomcat server.', cc: 'manohara.arm@gmail.com', from: 'manohara.arm@gmail.com', replyTo: 'manohara.arm@gmail.com', subject: 'Build', to: 'manohara.arm@gmail.com'
+}
+*/
+}
