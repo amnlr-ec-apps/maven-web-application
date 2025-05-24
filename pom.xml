@@ -85,12 +85,12 @@
     <distributionManagement>
         <repository>
             <id>nexus</id>
-            <name>Mithun Technologies Releases Nexus Repository</name>
+            <name>MCTS-release</name>
             <url>http://3.108.64.20:8081/repository/MCTS-release/</url>
         </repository>
         <snapshotRepository>
             <id>nexus</id>
-            <name>Mithun Technologies Snapshot Nexus Repository</name>
+            <name>MCTS-SNAPSHOT</name>
             <url>http://3.108.64.20:8081/repository/MCTS-SNAPSHOT/</url>
         </snapshotRepository>
     </distributionManagement>
