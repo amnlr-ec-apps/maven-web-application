@@ -84,12 +84,12 @@
 
     <distributionManagement>
         <repository>
-            <id>nexus-releases</id>
+            <id>nexus</id>
             <name>MCTS-release</name>
             <url>http://3.108.64.20:8081/repository/MCTS-release/</url>
         </repository>
         <snapshotRepository>
-            <id>nexus-SNAPSHOT</id>
+            <id>nexus</id>
             <name>MCTS-SNAPSHOT</name>
             <url>http://3.108.64.20:8081/repository/MCTS-SNAPSHOT/</url>
         </snapshotRepository>
