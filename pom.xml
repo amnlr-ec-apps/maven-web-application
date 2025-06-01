@@ -7,7 +7,7 @@
     <groupId>com.mt</groupId>
     <artifactId>maven-web-application</artifactId>
     <packaging>war</packaging>
-    <version>3.1.1-release</version>
+    <version>2.0.1-release</version>
 
     <name>maven-web-application</name>
     <description>Maven Web Project for Java</description>
@@ -22,7 +22,7 @@
         <spring.version>5.1.2.RELEASE</spring.version>
         <junit.version>4.11</junit.version>
         <log4j.version>1.2.17</log4j.version>
-        <sonar.host.url>http://3.110.118.192:9000/</sonar.host.url>
+        <sonar.host.url>http://13.203.220.72:9000/</sonar.host.url>
         <!-- <sonar.login>admin</sonar.login>
         <sonar.token>sqa_5472e85376ce1828812b185ad1c8bce622eef7f0</sonar.token> -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -86,12 +86,12 @@
         <repository>
             <id>nexus</id>
             <name>MCTS-release</name>
-            <url>http://3.110.55.28:8081/repository/MCTS-release/</url>
+            <url>http://13.127.189.157:8081/repository/MCTS-release/</url>
         </repository>
         <snapshotRepository>
             <id>nexus</id>
             <name>MCTS-SNAPSHOT</name>
-            <url>http://3.110.55.28:8081/repository/MCTS-SNAPSHOT/</url>
+            <url>http://13.127.189.157:8081/repository/MCTS-SNAPSHOT/</url>
         </snapshotRepository>
     </distributionManagement>
 
